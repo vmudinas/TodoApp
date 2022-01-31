@@ -1,0 +1,131 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    --grid-color: gray;
+    --grid-weight: 1px;
+    --grid-spacing: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-position: center center, center center;
+    background-size: var(--grid-spacing) var(--grid-spacing), var(--grid-spacing) var(--grid-spacing);
+    background-image: repeating-linear-gradient( 0deg, var(--grid-color), var(--grid-color) var(--grid-weight), transparent var(--grid-weight), transparent var(--grid-spacing) ), repeating-linear-gradient( -90deg, var(--grid-color), var(--grid-color) var(--grid-weight), transparent var(--grid-weight), transparent var(--grid-spacing) );
+    color: #000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.contain {
+    width: 100%;
+    max-width: 780px;
+    padding: 0 16px;
+}
+
+.saveBtn {
+    float: right;
+    margin: 5px !important;
+    margin-bottom: 10px !important;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li, input {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: 16px;
+    margin: 12px 0;
+    border: 1px solid #000;
+    box-shadow: -4px 4px 0px 0px #000;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remove {
+    position: relative;
+    height: 16px;
+    width: 16px;
+    margin: 0 0 0 16px;
+    padding: 0;
+    flex: 0 0 16px;
+    border: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+    .remove::before,
+    .remove::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(50% - 1px);
+        height: 100%;
+        width: 2px;
+        background: #000;
+    }
+
+    .remove::before {
+        transform: rotate(-45deg);
+    }
+
+    .remove::after {
+        transform: rotate(45deg);
+    }
+
+    .remove:focus {
+        outline: none;
+        background: #000;
+        color: #fff;
+    }
+
+        .remove:focus::before,
+        .remove:focus::after {
+            background: #fff;
+        }
+
+li:hover,
+input:hover {
+    box-shadow: -2px 2px 0px 0px #000;
+}
+
+li:focus,
+input:focus {
+    color: green;
+    outline: none;
+    border: 1px solid #00f;
+    box-shadow: -2px 2px 0px 0px #00f;
+}
+
+li.complete {
+    background: repeating-linear-gradient( 0deg, #fff, green 1px, transparent 0.5px, transparent 2px ), repeating-linear-gradient( 90deg, #fff, green 1px, transparent 1px, transparent 1px ) #000;
+}
+
+    li.complete div {
+        text-decoration: line-through;
+    }
