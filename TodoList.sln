@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoServices", "TodoService
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "TodoWebAppReact", "TodoWebAppReact\TodoWebAppReact.esproj", "{47839EB7-20DE-4C5C-A1C1-6EF53083FA3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoServicesTests", "TodoServicesTests\TodoServicesTests.csproj", "{BA7D5B9C-DCB8-4D0E-99A0-FC544CF6FACF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{47839EB7-20DE-4C5C-A1C1-6EF53083FA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47839EB7-20DE-4C5C-A1C1-6EF53083FA3F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47839EB7-20DE-4C5C-A1C1-6EF53083FA3F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BA7D5B9C-DCB8-4D0E-99A0-FC544CF6FACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA7D5B9C-DCB8-4D0E-99A0-FC544CF6FACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA7D5B9C-DCB8-4D0E-99A0-FC544CF6FACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA7D5B9C-DCB8-4D0E-99A0-FC544CF6FACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
