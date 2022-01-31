@@ -6,3 +6,4 @@ TodoWebAppReact
 *.dll
 =======
 >>>>>>> parent of 7025645 (Update .gitignore)
+.vs/TodoList/v17/TestStore/0/000.testlog
