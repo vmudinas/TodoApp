@@ -1,0 +1,15 @@
+C:\Dev\TTT\TodoServices\bin\Debug\net6.0\TodoServices.deps.json
+C:\Dev\TTT\TodoServices\bin\Debug\net6.0\TodoServices.dll
+C:\Dev\TTT\TodoServices\bin\Debug\net6.0\ref\TodoServices.dll
+C:\Dev\TTT\TodoServices\bin\Debug\net6.0\TodoServices.pdb
+C:\Dev\TTT\TodoServices\bin\Debug\net6.0\TodoData.dll
+C:\Dev\TTT\TodoServices\bin\Debug\net6.0\TodoData.pdb
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.csproj.AssemblyReference.cache
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.AssemblyInfoInputs.cache
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.AssemblyInfo.cs
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.csproj.CoreCompileInputs.cache
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.csproj.CopyComplete
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.dll
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\ref\TodoServices.dll
+C:\Dev\TTT\TodoServices\obj\Debug\net6.0\TodoServices.pdb
