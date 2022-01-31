@@ -1,0 +1,11 @@
+C:\Dev\Int\TodoData\bin\Debug\net6.0\TodoData.deps.json
+C:\Dev\Int\TodoData\bin\Debug\net6.0\TodoData.dll
+C:\Dev\Int\TodoData\bin\Debug\net6.0\ref\TodoData.dll
+C:\Dev\Int\TodoData\bin\Debug\net6.0\TodoData.pdb
+C:\Dev\Int\TodoData\obj\Debug\net6.0\TodoData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\Int\TodoData\obj\Debug\net6.0\TodoData.AssemblyInfoInputs.cache
+C:\Dev\Int\TodoData\obj\Debug\net6.0\TodoData.AssemblyInfo.cs
+C:\Dev\Int\TodoData\obj\Debug\net6.0\TodoData.csproj.CoreCompileInputs.cache
+C:\Dev\Int\TodoData\obj\Debug\net6.0\TodoData.dll
+C:\Dev\Int\TodoData\obj\Debug\net6.0\ref\TodoData.dll
+C:\Dev\Int\TodoData\obj\Debug\net6.0\TodoData.pdb
