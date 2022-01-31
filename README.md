@@ -1,6 +1,6 @@
 # Simple ToDo list application.
 ## Requirements
-## Ability to view, add, edit, delete items in a ToDo list
+* Ability to view, add, edit, delete items in a ToDo list
 ## Notes
  Use visual studio or vs code to create a solution targeting .NET Core
  Create interfaces, services, models, repositories, unit tests, controllers, views, etc.
