@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Moq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TodoData;
 using TodoData.Models;
@@ -12,22 +15,41 @@ namespace TodoServicesTests
     public class TodoServiceTests
     {
         private MockRepository mockRepository;
-
-        private Mock<ApplicationContext> mockApplicationContext;
         private Mock<ILogger<TodoService>> mockLogger;
+        private Guid taskGuidToDelete { get; set; }
+        private Guid taskGuidToUpdate { get; set; }
 
         public TodoServiceTests()
         {
             this.mockRepository = new MockRepository(MockBehavior.Loose);
-
-            this.mockApplicationContext = this.mockRepository.Create<ApplicationContext>();
             this.mockLogger = this.mockRepository.Create<ILogger<TodoService>>();
         }
 
+        private ApplicationContext CreateDbContext()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationContext>()
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+            .Options;
+            var dbContext = new ApplicationContext(options); dbContext.TodoItem.AddRange(GetFakeData().AsQueryable());
+            dbContext.SaveChanges();
+            return dbContext;
+        }
+        private List<TodoItem> GetFakeData()
+        {
+            taskGuidToDelete = Guid.NewGuid();
+            taskGuidToUpdate = Guid.NewGuid();
+
+            var todoTasks = new List<TodoItem>
+              { 
+                new TodoItem { Id = taskGuidToDelete, Text ="Data", Completed = true },
+                new TodoItem { Id = taskGuidToUpdate, Text ="Data 2", Completed = false }
+              };
+            return todoTasks;
+        }
         private TodoService CreateService()
         {
             return new TodoService(
-                this.mockApplicationContext.Object,
+                CreateDbContext(),
                 this.mockLogger.Object);
         }
 
@@ -36,15 +58,16 @@ namespace TodoServicesTests
         {
             // Arrange
             var service = this.CreateService();
-            Guid todoGuid = default(global::System.Guid);
 
+            var listOfTask = service.GetAllTodos();
             // Act
             await service.DeleteTodo(
-                todoGuid);
+                taskGuidToDelete);
 
+            var listOfTaskAfterDelete = service.GetAllTodos();
             // Assert
-            Assert.True(false);
-            this.mockRepository.VerifyAll();
+            Assert.True(listOfTask.Count() > listOfTaskAfterDelete.Count());
+
         }
 
         [Fact]
@@ -53,14 +76,18 @@ namespace TodoServicesTests
             // Arrange
             var service = this.CreateService();
             string text = "testtask";
-
+            var listOfTask = service.GetAllTodos();
             // Act
             var result = await service.Add(
                 text);
 
             // Assert
-            Assert.True(false);
-            this.mockRepository.VerifyAll();
+            Assert.Equal("testtask", result.Text);
+            Assert.False(result.Completed);
+            var listOfTaskAfterAdd = service.GetAllTodos();
+            // Assert
+            Assert.True(listOfTask.Count() < listOfTaskAfterAdd.Count());
+
         }
 
         [Fact]
@@ -68,15 +95,17 @@ namespace TodoServicesTests
         {
             // Arrange
             var service = this.CreateService();
-            TodoItem updatedData = new TodoItem { Id = Guid.NewGuid(), Text = "UpdateThis" };
+            TodoItem updatedData = new() { Id = taskGuidToUpdate, Text = "UpdateThis", Completed = true };
 
             // Act
             await service.UpdateTodo(
                 updatedData);
 
+            var listOfTask = service.GetAllTodos();
+            var updatedTask = listOfTask.FirstOrDefault(t => t.Id == taskGuidToUpdate);
             // Assert
-            Assert.True(false);
-            this.mockRepository.VerifyAll();
+            Assert.Equal("UpdateThis", updatedTask?.Text ?? "");
+            Assert.True(updatedTask.Completed);
         }
 
         [Fact]
@@ -89,8 +118,7 @@ namespace TodoServicesTests
             var result = service.GetAllTodos();
 
             // Assert
-            Assert.True(false);
-            this.mockRepository.VerifyAll();
+            Assert.True(result.Count() > 0);
         }
     }
 }
