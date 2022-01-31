@@ -30,8 +30,7 @@ namespace TodoApi.Controllers
         {
             if (string.IsNullOrEmpty(text)) return BadRequest();
 
-            await _todoService.Add(text);
-            return Ok();
+            return Ok(await _todoService.Add(text));
         }
 
         //// POST /api/todo/{id}

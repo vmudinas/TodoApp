@@ -24,11 +24,12 @@ namespace TodoServices
             await _context.SaveChangesAsync();
         }
 
-        public async Task Add(string text)
+        public async Task<TodoItem> Add(string text)
         {
             var todo = new TodoItem { Id = Guid.NewGuid(), Completed = false, Text = text };
             await _context.TodoItem.AddAsync(todo);
             await _context.SaveChangesAsync();
+            return todo;
 
         }
 

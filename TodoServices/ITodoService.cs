@@ -6,7 +6,7 @@ namespace TodoServices
     {
         Task DeleteTodo(Guid todoGuid);
         TodoItem[] GetAllTodos();
-        Task Add(string text);
+        Task<TodoItem> Add(string text);
         Task UpdateTodo(TodoItem updatedData);
     }
 }
