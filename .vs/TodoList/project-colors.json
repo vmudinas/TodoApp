@@ -25,7 +25,17 @@
       "ProjectGuid": "b3e99b2c-5e2e-4099-961d-0297aa90a50f",
       "DisplayName": "TodoServicesTests",
       "ColorIndex": 4
+    },
+    "ba7d5b9c-dcb8-4d0e-99a0-fc544cf6facf": {
+      "ProjectGuid": "ba7d5b9c-dcb8-4d0e-99a0-fc544cf6facf",
+      "DisplayName": "TodoServicesTests",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }
